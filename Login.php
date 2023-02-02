@@ -2,8 +2,12 @@
 
     $inData = getRequestInfo();
 
+    $id = 0;
+    $firstName = "";
+    $lastName = "";
+
     // Create connection
-    $conn = new mysqli($servername, $username, $password);
+    $conn = new mysqli(localhost, , $password);
 
     // Check connection
     if ($conn->connect_error)
