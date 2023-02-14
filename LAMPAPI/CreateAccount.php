@@ -2,8 +2,7 @@
 
     $inData = getRequestInfo();
 
-      
-    $id = $inData["userID"];
+    $id;
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
     $login = $inData["login"];
@@ -20,8 +19,16 @@
     }
     else
     {
-      // check if user already exists
-        $sql = "SELECT * FROM Users WHERE Login = '$login'";
+/*
+       $stmt = $conn->prepare("INSERT into Users (firstName, lastName, login, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
+        $stmt->execute();
+		$stmt->close();
+		$conn->close();
+//		returnWithError("");
+   */
+     // check if user already exists
+        $sql = "SELECT * FROM Users WHERE login = '$login'";
         $result = $conn->query($sql);
         if($result->num_rows > 0)
         {
@@ -29,7 +36,13 @@
         }
         else 
         {
-            $sql = "INSERT INTO Users (FirstName, LastName, Login, Password) VALUES ('$firstName', '$lastName', '$login', '$password')";
+         //   $sql = "INSERT INTO Users (firstName, lastName, login, password) VALUES ('$firstName', '$lastName', '$login', '$password')";
+
+            $stmt = $conn->prepare("INSERT into Users (firstName, lastName, login, password) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
+            $stmt->execute();
+            $stmt->close();
+            $conn->close();
 
             if($sql->query($sql) == TRUE)
             {
@@ -40,7 +53,8 @@
               echo "Could not create account";
             }
         }
-        $conn->close();
+  //      $conn->close();
+      
     }
 
 
@@ -63,7 +77,7 @@
     
     function returnWithInfo( $firstName, $lastName, $id )
     {
-        $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+        $retValue = '{"returnWithInfo: id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
         sendResultInfoAsJson( $retValue );
     }
 ?>
