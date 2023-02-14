@@ -1,10 +1,9 @@
-
 <?php
 
 $inData = getRequestInfo();
 
       
-    $id = $inData["userId"];
+    $id = $inData["ID"];    
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
     $number = $inData["number"];
@@ -21,13 +20,18 @@ $inData = getRequestInfo();
     }
     else
     {
-
-        $sql "UPDATE Users SET 
-        FirstName = '$firstName', 
-        LastName = '$lastName', 
-        Number = '$number', 
-        Email = '$email'
-        WHERE ID = = '$id'";
+  /*      $stmt = $conn->prepare("UPDATE Contacts SET firstName = ?, lastName = ?, number = ?, email = ? WHERE ID = '$id'");
+        $stmt->bind_param("ssis", $firstName, $lastName, $number, $email);
+        $stmt->execute();
+		$stmt->close();
+		$conn->close();
+*/
+        $sql  = "UPDATE Contacts SET 
+        firstName = '$firstName', 
+        lastName = '$lastName', 
+        number = '$number', 
+        email = '$email'
+        WHERE ID = '$id'";
 
 
         if($conn->query($sql) === TRUE)
@@ -40,6 +44,7 @@ $inData = getRequestInfo();
         }
 
         $conn->close();
+ 
     }
 
     function getRequestInfo()
