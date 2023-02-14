@@ -2,7 +2,7 @@
 
     $inData = getRequestInfo();
  
-    $userID = $inData["ID"];    // identify which user has this contact
+    $userID = $inData["userID"];    // identify which user has this contact
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
     $number = $inData["number"];
@@ -24,7 +24,8 @@
         $stmt->execute();
 		$stmt->close();
 		$conn->close();
-*/
+*/    
+
       // check if user already exists
         $sql = "SELECT * FROM Contacts WHERE email = '$email'";
         $result = $conn->query($sql);
@@ -40,7 +41,7 @@
             $stmt->close();
             $conn->close();
         
-  //          $sql = "INSERT INTO Conacts (FirstName, LastName, PhoneNumber, Email) VALUES ('$firstName', '$lastName', '$number', '$email')";
+  //          $sql = "INSERT INTO Contacts (FirstName, LastName, PhoneNumber, Email) VALUES ('$firstName', '$lastName', '$number', '$email')";
 
             if($sql->query($sql) == TRUE)
             {
