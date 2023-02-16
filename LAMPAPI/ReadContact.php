@@ -16,12 +16,11 @@
         $stmt = "SELECT firstName, lastName, number, email, userID FROM Contacts";
         $result = $conn->query($stmt);
 
-        if( $contactCount > 0  )
+        if( $result->num_rows > 0  )
         {
             while($row = $result->fetch_assoc()){
-			returnWithInfo( $row['firstName'], $row['lastName'], $row['number'], $row['email'], $row['userID']); //Next line?	  
-	  }
-
+		returnWithInfo( $row['firstName'], $row['lastName'], $row['number'], $row['email'], $row['userID']); //Next line?	  
+            }
         }
         else
         {
