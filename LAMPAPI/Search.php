@@ -15,6 +15,20 @@
 		
 // NEEDS TO BE EDITED vvvvv
 		
+	    /* 	$contactName = "%" . $inData["search"] . "%";
+		$sql = "SELECT * FROM Contacts WHERE firstName = '$contactName'"
+		$result->$conn->query($sql);
+		if($result->num_rows > 0) {
+  		   while($row = $result->fetch_assoc()){
+			returnWithInfo( $row['firstName'], $row['lastName'], $row['number'], $row['email'], $row['userID']); //Next line?
+		   }
+		}
+		else {
+  		 returnWithError("No Contacts Match");
+		}
+		
+		Maybe? */
+		
 		$stmt = $conn->prepare("select Name from Contacts where Name like ? and UserID=?");
 		$contactName = "%" . $inData["search"] . "%";
 		$stmt->bind_param("ss", $contactName, $inData["userId"]);
