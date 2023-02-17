@@ -1,6 +1,6 @@
 <?php
 
-$host = "localhost";
+$host = "group19cop4331.xyz";
 $dbname = "cop4331";
 $username = "root";
 $password = "?weLOVElamp826";
