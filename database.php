@@ -1,6 +1,6 @@
 <?php
 
-$host = "138.197.120.41"; //this was once "localhost" and I'm not sure if it's supposed to be that or our server's IP address...?
+$host = "localhost";
 $dbname = "cop4331";
 $username = "root";
 $password = "?weLOVElamp826";
