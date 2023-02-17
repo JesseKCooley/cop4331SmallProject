@@ -37,7 +37,4 @@ $arrVal = array();
 	 	}
 	 		 echo  json_encode($arrVal);		
  
-
-
-?>   
  
