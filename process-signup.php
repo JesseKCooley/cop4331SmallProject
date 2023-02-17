@@ -59,7 +59,3 @@ if ($stmt->execute()) {
 
 
 
-
-?>
-
-
