@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Contact</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="/js/contactValidation.js" defer></script>
+</head>
+<body style = "background-color:#E6E6FA;">
+    
+    <h1>New Contact</h1>
+    
+    <form action="process-contact.php" method="post" id = "contact" novalidate>
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <div>
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber">
+        </div>
+
+        
+        <button>Create</button>
+    </form>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
