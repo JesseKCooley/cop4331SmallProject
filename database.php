@@ -1,6 +1,6 @@
 <?php
 
-$host = "group19cop4331.xyz";
+$host = "138.197.120.41";
 $dbname = "cop4331";
 $username = "root";
 $password = "?weLOVElamp826";
