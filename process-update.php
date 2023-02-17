@@ -22,11 +22,6 @@ if ($mysqli->query($sql) === TRUE) {
     echo "Error updating record: " . $mysqli->error;
   }
 
-?>
-
-
-
-
 
 
 
