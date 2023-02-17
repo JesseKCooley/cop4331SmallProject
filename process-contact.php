@@ -43,8 +43,6 @@ if ($stmt->execute()) {
     }
 }
 
-?>
-
 
 
 
