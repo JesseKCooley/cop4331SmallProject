@@ -55,6 +55,15 @@ if (isset($_SESSION["user_id"])) {
                 </div>
             </div>
 		</div>
+	    
+	      <div class="panel-body">
+			<div class="row">
+            <a class="btn btn-primary" href="search.html" role="button">Search</a>
+				<div class="col-md-12">					 
+					<table id= "table"class="table table-hover"data-show-columns="true"data-height="460"></table>
+                </div>
+            </div>
+		</div>
                            
 	</div>           
     <p><a href="logout.php">Log out</a></p>
@@ -262,6 +271,10 @@ if (isset($_SESSION["user_id"])) {
 			          sortable: true,
              
 			          
+			      },{
+				      field: 'dateCreated',
+                      			title: 'Date Created',
+                    		 	sortable: true,
 			      },{
 			          field: 'phone',
 			          title: 'Phone Number',
