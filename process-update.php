@@ -1,5 +1,5 @@
 <?php
-
+// check for only characters for name
 if (empty($_POST["firstName"])) {
     die("First name is required");
 }
