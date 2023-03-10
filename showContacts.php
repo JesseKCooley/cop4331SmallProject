@@ -28,7 +28,8 @@ $arrVal = array();
  	 		 	 				'first'=> $rowList['firstName'],
 	 		 	 				'last'=> $rowList['lastName'],
                                 'email'=>$rowList['email'],
-                                'phone'=>$rowList['phoneNumber']
+                                'phone'=>$rowList['phoneNumber'],
+							'dateCreated'=>$rowList['dateAdded']
  	 		 	 			);		
 
 
