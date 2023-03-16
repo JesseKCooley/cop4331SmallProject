@@ -318,7 +318,6 @@ if (isset($_SESSION["user_id"])) {
 	 var $table = $('#table');
 		     $table.bootstrapTable({
 			      url: 'showContacts.php',
-			      search: true,
 			      pagination: true,
 			      buttonsClass: 'primary',
 			      showFooter: false,
