@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </head>
 <body style = "background-color:#E6E6FA;">
-<div class="container-fluid">   
+<div class="container my-5 mx-5">   
     <h1>Login</h1>
     
     <?php if ($is_invalid): ?>
