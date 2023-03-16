@@ -3,25 +3,7 @@
     $username = $email = "";
     $formValid = true;
 
-    if (empty($_POST["userName"])){
-        $nameErr = "Name is required";
-        $formValid = false;
-    }
-
-    if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
-        $emailErr = "Valid email is required";
-        $formValid = false;
-    }
-
-    if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
-        $passwordErr = "Valid password is required";
-        $formValid = false;
-    }
-
-    if ($_POST["password"] !== $_POST["password_confirmation"]) {
-        $passMatchErr = "Passwords must match";
-        $formValid = false;
-    }
+   
 
 ?>
 
@@ -89,6 +71,27 @@
 </html>
 
 <?php
+ if (empty($_POST["userName"])){
+    $nameErr = "Name is required";
+    $formValid = false;
+}
+
+if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+    $emailErr = "Valid email is required";
+    $formValid = false;
+}
+
+if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
+    $passwordErr = "Valid password is required";
+    $formValid = false;
+}
+
+if ($_POST["password"] !== $_POST["password_confirmation"]) {
+    $passMatchErr = "Passwords must match";
+    $formValid = false;
+}
+
+
 if($formValid == true)
 {
     $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
