@@ -1,21 +1,26 @@
 <?php
     $nameErr = $emailErr = $passwordErr = $passMatchErr = "";
     $username = $email = "";
+    $formValid = true;
 
     if (empty($_POST["userName"])){
         $nameErr = "Name is required";
+        $formValid = false;
     }
 
     if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
         $emailErr = "Valid email is required";
+        $formValid = false;
     }
 
     if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
         $passwordErr = "Valid password is required";
+        $formValid = false;
     }
 
     if ($_POST["password"] !== $_POST["password_confirmation"]) {
         $passMatchErr = "Passwords must match";
+        $formValid = false;
     }
 
 ?>
@@ -84,35 +89,38 @@
 </html>
 
 <?php
-$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+if($formValid == true)
+{
+    $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$mysqli = require __DIR__ . "/database.php";
+    $mysqli = require __DIR__ . "/database.php";
 
-$sql = "INSERT INTO users (userName, email, password_hash)
-        VALUES (?, ?, ?)";
+    $sql = "INSERT INTO users (userName, email, password_hash)
+            VALUES (?, ?, ?)";
+            
+    $stmt = $mysqli->stmt_init();
+
+    if ( ! $stmt->prepare($sql)) {
+        die("SQL error: " . $mysqli->error);
+    }
+
+    $stmt->bind_param("sss",
+                    $_POST["userName"],
+                    $_POST["email"],
+                    $password_hash);
+                    
+    if ($stmt->execute()) {
+
+        header("Location: signup-success.html");
+        exit;
         
-$stmt = $mysqli->stmt_init();
-
-if ( ! $stmt->prepare($sql)) {
-    die("SQL error: " . $mysqli->error);
-}
-
-$stmt->bind_param("sss",
-                  $_POST["userName"],
-                  $_POST["email"],
-                  $password_hash);
-                  
-if ($stmt->execute()) {
-
-    header("Location: signup-success.html");
-    exit;
-    
-} else {
-    
-    if ($mysqli->errno === 1062) {
-        die("email already taken");
     } else {
-        die($mysqli->error . " " . $mysqli->errno);
+        
+        if ($mysqli->errno === 1062) {
+            die("email already taken");
+        } else {
+            die($mysqli->error . " " . $mysqli->errno);
+        }
     }
 }
 ?>
