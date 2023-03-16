@@ -188,7 +188,7 @@ if (isset($_SESSION["user_id"])) {
             <form id="contactForm" name="contact" role="form">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" value="John">             
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="<?php $_SESSION["user_id"]?>">             
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
