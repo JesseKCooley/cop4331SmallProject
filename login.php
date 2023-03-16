@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </head>
 <body style = "background-color:#E6E6FA;">
-<div class="container my-5 mx-5">   
+<div class="container-fluid">   
     <h1>Login</h1>
     
     <?php if ($is_invalid): ?>
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     </form>
 
-    <p class="space">Don't have an account? Click <a href="signup.html">here</a>.</p>
+    <p class="space">Don't have an account? <a href="signup.html">Create Account</a></p>
 
 </div>
 </body>
