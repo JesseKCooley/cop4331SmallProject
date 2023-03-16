@@ -64,6 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     </form>
 
+    <p>Don't have an account? Click <a href="index.php">here</a>.</p>
+
 </div>
 </body>
 </html>
