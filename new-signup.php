@@ -3,7 +3,7 @@
     $username = $email = "";
     $formValid = true;
 
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["userName"])){
         $nameErr = "Name is required";
         $formValid = false;
@@ -14,6 +14,8 @@
     if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
         $emailErr = "Valid email is required";
         $formValid = false;
+    }else {
+        $email = test_input($_POST["email"]);
     }
 
     if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
@@ -33,6 +35,7 @@
         $data = htmlspecialchars($data);
         return $data;
       }
+}
 
 ?>
 
