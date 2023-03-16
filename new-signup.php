@@ -3,7 +3,36 @@
     $username = $email = "";
     $formValid = true;
 
-   
+
+    if (empty($_POST["userName"])){
+        $nameErr = "Name is required";
+        $formValid = false;
+    }else {
+        $username = test_input($_POST["userName"]);
+    }
+
+    if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+        $emailErr = "Valid email is required";
+        $formValid = false;
+    }
+
+    if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
+        $passwordErr = "Valid password is required";
+        $formValid = false;
+    }
+
+    if ($_POST["password"] !== $_POST["password_confirmation"]) {
+        $passMatchErr = "Passwords must match";
+        $formValid = false;
+    }
+
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
 
 ?>
 
@@ -30,27 +59,7 @@
 </head>
 <body style = "background-color:#E6E6FA;" >
 
-<?php
- if (empty($_POST["userName"])){
-    $nameErr = "Name is required";
-    $formValid = false;
-}
 
-if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
-    $emailErr = "Valid email is required";
-    $formValid = false;
-}
-
-if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
-    $passwordErr = "Valid password is required";
-    $formValid = false;
-}
-
-if ($_POST["password"] !== $_POST["password_confirmation"]) {
-    $passMatchErr = "Passwords must match";
-    $formValid = false;
-}
-?>
 
 <div class="container my-5 mx-5"> 
     <h1>Signup</h1>
