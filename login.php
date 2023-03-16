@@ -43,6 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        p.space{
+            margin-top: 8px;
+        }
+    </style>
+
 </head>
 <body style = "background-color:#E6E6FA;">
 <div class="container my-5 mx-5">   
@@ -53,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <?php endif; ?>
 
     <form method="post">
-        <label for="email">email</label>
+        <label for="email">Email</label>
         <input type="email" name="email" id="email"
                value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
         
@@ -64,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     </form>
 
-    <p>Don't have an account? Click <a href="signup.html">here</a>.</p>
+    <p class="space">Don't have an account? Click <a href="signup.html">here</a>.</p>
 
 </div>
 </body>
