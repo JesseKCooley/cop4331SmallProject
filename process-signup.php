@@ -1,7 +1,7 @@
 <?php
 
 if (empty($_POST["userName"])) {
-    die("Name is required");
+    echo "Name is required";
 }
 
 if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {

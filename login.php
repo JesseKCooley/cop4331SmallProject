@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     </form>
 
-    <p class="space">Don't have an account? <a href="new-signup.php">Create Account</a></p>
+    <p class="space">Don't have an account? <a href="signup.html">Create Account</a></p>
 
 </div>
 </body>
