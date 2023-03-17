@@ -65,8 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div class="container my-5 mx-5"> 
-    <h1>Signup</h1><br><br>
-    <p class="error">*Required field</p><br>
+    <h1>Signup</h1><br>
+    <p class="error">*Required field</p>
     
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="signup" novalidate>
         <div>
