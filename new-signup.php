@@ -70,21 +70,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="signup" novalidate>
         <div>
             <label for="userName">Username</label>
-            <span class="error">* <?php echo $nameErr;?></span><br>
-            <input type="text" id="userName" name="userName" value = "<?php echo $username;?>">
-            
+            <span class="error">* <?php echo $nameErr;?></span>
+            <input type="text" id="userName" name="userName" value = "<?php echo $username;?>"><br>
         </div>
         
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" value = "<?php echo $email;?>">
             <span class="error">* <?php echo $emailErr;?></span><br>
+            <input type="email" id="email" name="email" value = "<?php echo $email;?>"><br>
         </div>
         
         <div>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password">
-            <span class="error">* <?php echo $passwordErr;?></span><br>
+            <span class="error">* <?php echo $passwordErr;?></span>
+            <input type="password" id="password" name="password"><br>
             <p>Must contain the following:</p>
             <ul>
                 <li>8 or more characters</li>
@@ -95,8 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <div>
             <label for="password_confirmation">Confirm password</label>
-            <input type="password" id="password_confirmation" name="password_confirmation">
-            <span class="error">* <?php echo $passMatchErr;?></span><br>
+            <span class="error">* <?php echo $passMatchErr;?></span>
+            <input type="password" id="password_confirmation" name="password_confirmation"><br>
         </div>
         
         <button>Sign up</button>
