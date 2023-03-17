@@ -11,19 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = test_input($_POST["userName"]);
     }
 
-    else if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+    if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
         $emailErr = "Valid email is required";
         $formValid = false;
     }else {
         $email = test_input($_POST["email"]);
     }
 
-    else if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
+    if ( ! preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i", $_POST["password"])) {
         $passwordErr = "Valid password is required";
         $formValid = false;
     }
 
-    else if ($_POST["password"] !== $_POST["password_confirmation"]) {
+    if ($_POST["password"] !== $_POST["password_confirmation"]) {
         $passMatchErr = "Passwords must match";
         $formValid = false;
     }
