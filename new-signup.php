@@ -84,10 +84,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
             <span class="error">* <?php echo $passwordErr;?></span><br>
-            <p>Required:</p>
-            <p>8 or more characters</p>
-            <p>1 or more letters</p>
-            <p>1 or more numbers</p>
+            <p>Must contain the following:</p>
+            <ul>
+                <li>8 or more characters</li>
+                <li>1 or more letters</li>
+                <li>1 or more numbers</li>
+            </ul>
         </div>
         
         <div>
