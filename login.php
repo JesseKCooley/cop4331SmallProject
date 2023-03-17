@@ -55,9 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="container my-5 mx-5">   
     <h1>Login</h1>
     
-    <?php if ($is_invalid): ?>
-        <span style="color:red;">*Invalid login</span>
-    <?php endif; ?>
+    <!-- invalid -->
 
     <form method="post">
         <label for="email">Email</label>
@@ -67,6 +65,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label for="password">Password</label>
         <input type="password" name="password" id="password">
         <br>
+
+        <?php if ($is_invalid): ?>
+        <span style="color:red;">*Invalid login</span>
+    <?php endif; ?>
+
+    <br>
         <button>Log in</button>
 
     </form>
