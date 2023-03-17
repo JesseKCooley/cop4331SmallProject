@@ -70,8 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="signup" novalidate>
         <div>
             <label for="userName">Username</label>
-            <input type="text" id="userName" name="userName" value = "<?php echo $username;?>">
             <span class="error">* <?php echo $nameErr;?></span><br>
+            <input type="text" id="userName" name="userName" value = "<?php echo $username;?>">
+            
         </div>
         
         <div>
