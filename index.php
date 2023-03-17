@@ -147,7 +147,7 @@ if (isset($_SESSION["user_id"])) {
 	</div>           
     <p><a href="logout.php">Log out</a></p>
         
-    <?php else: ?>
+    <?php else: header("Location: login.php");?>
    <!-- This is the Main body of the page with no user logged in -->      
         <h5><a href="login.php">Log In</a> or <a href="new-signup.php">Sign Up</a></h5>
         
