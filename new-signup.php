@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div>
             <label for="email">Email</label>
             <span class="error">* <?php echo $emailErr;?></span><br>
-            <input type="email" id="email" name="email" value = "<?php echo $email;?>"><br>
+            <input type="email" id="email" name="email" value = "<?= htmlspecialchars($_POST["email"] ?? "") ?>"><br>
         </div>
         
         <div>
