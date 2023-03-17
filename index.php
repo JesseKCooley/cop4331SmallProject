@@ -122,7 +122,7 @@ if (isset($_SESSION["user_id"])) {
     <h1>Contact Manager</h1>       
     <?php if (isset($user)): ?>
         
-    <p>Hello <?= ($user["userName"]) ?></p>
+    <h4>Hello <?= ($user["userName"]) ?></h4>
     <p>Below are your contacts.</p>
 	
 	 <div class="topnav">
@@ -149,7 +149,7 @@ if (isset($_SESSION["user_id"])) {
         
     <?php else: ?>
    <!-- This is the Main body of the page with no user logged in -->      
-        <h2><a href="login.php">Log In</a> or <a href="new-signup.php">Sign Up</a></h2>
+        <h5><a href="login.php">Log In</a> or <a href="new-signup.php">Sign Up</a></h5>
         
     <?php endif; ?>
          
