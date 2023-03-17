@@ -149,7 +149,7 @@ if (isset($_SESSION["user_id"])) {
         
     <?php else: ?>
    <!-- This is the Main body of the page with no user logged in -->      
-        <p><a href="login.php">Log in</a> or <a href="new-signup.php">sign up</a></p>
+        <h2><a href="login.php">Log In</a> or <a href="new-signup.php">Sign Up</a></h2>
         
     <?php endif; ?>
          
