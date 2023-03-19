@@ -3,6 +3,9 @@
 if (empty($_POST["firstName"])) {
     die("First name is required");
 }
+if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+  die("Valid email is required");
+}
 
 $mysqli = require __DIR__ . "/database.php";
 
