@@ -19,7 +19,7 @@
             $lasname = test_input($_POST["lastName"]);
         }
 
-        if ( !($_POST["email"]) && (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))){
+        if ( !empty($_POST["email"]) && (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))){
             $emailErr = "Valid email is required";
             $formValid = false;
         }
