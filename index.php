@@ -246,9 +246,9 @@ if (isset($_SESSION["user_id"])) {
 	 _email = test[index]['email'].toString();
 	 _phoneNo  = test[index]['phone'].toString();
          $('#contact-modal form input[id=firstName]').val(_firstName);
-	 $('#contact-modal form input[id=lastName]').val(_firstName);
-	 $('#contact-modal form input[id=email]').val(_firstName);
-	 $('#contact-modal form input[id=phoneNumber]').val(_firstName);
+	 $('#contact-modal form input[id=lastName]').val(_lastName);
+	 $('#contact-modal form input[id=email]').val(_email);
+	 $('#contact-modal form input[id=phoneNumber]').val(_phoneNo);
     });
 
 //here we have to ajax the edit and delete commands to php (because they're nested inside of modals)
