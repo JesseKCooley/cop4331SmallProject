@@ -18,7 +18,7 @@
         }else {
             $lasname = test_input($_POST["lastName"]);
         }
-
+/*
         if (!(empty($_POST["email"]))){
             $email = test_input($_POST["email"])
         }
@@ -26,7 +26,7 @@
         if (!(empty($_POST["phoneNumber"]))){
             $number = test_input($_POST["phoneNumber"])
         }
-
+*/
 
     }
     function test_input($data) {
