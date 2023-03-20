@@ -240,7 +240,7 @@ if (isset($_SESSION["user_id"])) {
         var test =$table.bootstrapTable('getData');
         var al = test[index]['id'];
         currentSelection = al;
-	    firstName = test[index]['firstName'];
+	  firstName = test[index]['firstName'];
         
     });
 
@@ -314,9 +314,9 @@ if (isset($_SESSION["user_id"])) {
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
 	
-            
+             $('#contact-modal form input[name=firstName]').val(firstName);
             $('#contact-modal').modal('show');
-            $(".modal-body #firstName").val(firstName);
+
         },
         'click .remove': function (e, value, row, index) {
  
