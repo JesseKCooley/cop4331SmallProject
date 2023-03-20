@@ -5,29 +5,29 @@
     $formValid = true;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["firstname"])){
+        if (empty($_POST["firstName"])){
             $firnameErr = "First name is required";
             $formValid = false;
         }else {
             $firname = test_input($_POST["firstName"]);
         }
 
-        if (empty($_POST["lastname"])){
+        if (empty($_POST["lastName"])){
    //         $lasnameErr = "Last name is required";
    //         $formValid = false;
         }else {
             $lasname = test_input($_POST["lastName"]);
         }
-/*
+
         if (! empty($_POST["email"])){
             $email = test_input($_POST["email"])
         }
 
-        if (! empty($_POST["number"])){
-            $number = test_input($_POST["number"])
+        if (! empty($_POST["phoneNumber"])){
+            $number = test_input($_POST["phoneNumber"])
         }
 
-*/
+
     }
     function test_input($data) {
         $data = trim($data);
