@@ -137,7 +137,7 @@ if (isset($_SESSION["user_id"])) {
     <div class="panel panel-success">						 
 		<div class="panel-body">
 			<div class="row">
-            <a class="btn btn-primary" href="new-process-contact.php" role="button">Add Contact</a>
+            <a class="btn btn-primary" href="new-create-contact.php" role="button">Add Contact</a>
 				<div class="col-md-12">					 
 					<table id= "table"class="table table-hover"data-show-columns="true"data-height="460"></table>
                 </div>
