@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         
         <div>
-            <label for="password_confirmation">Confirm password</label>
+            <label for="password_confirmation">Confirm Password</label>
             <span class="error">* <?php echo $passMatchErr;?></span>
             <input type="password" id="password_confirmation" name="password_confirmation"><br>
         </div>
