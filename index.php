@@ -177,15 +177,7 @@ if (isset($_SESSION["user_id"])) {
 </div>
  <!-- This is the Modal which appears when the edit contact button is pressed -->
  <!-- TO DO: populate edit modal with current table data so that not all fields have to be entered -->
-<?php 
-    $sql = "SELECT * FROM contacts
-    WHERE id = {$_POST["id"]}";
 
-    $result = $mysqli->query($sql);
-
-    $contact = $result->fetch_assoc();
-
-?>
 
 
  <div id="contact-modal"class="modal" role="dialog">
@@ -197,6 +189,18 @@ if (isset($_SESSION["user_id"])) {
             </div>
             <div class="modal-body">
             <form id="contactForm" name="contact" role="form">
+
+            <?php 
+
+            $sql = "SELECT * FROM contacts
+            WHERE id = {$_POST["id"]}";
+
+            $result = $mysqli->query($sql);
+
+            $contact = $result->fetch_assoc();
+
+            ?>
+
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName" value="<?php echo $contact["firstName"] ">             
