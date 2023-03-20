@@ -127,12 +127,11 @@ if (isset($_SESSION["user_id"])) {
     <?php if (isset($user)): ?>
         
     <h4>Hello <?= ($user["userName"]) ?></h4>
-    <!--<div class="btn-text-right">
-    <a class="btn btn-primary" href="logout.php" role="button">Logout</a>
-    </div> -->
     <p>Below are your contacts.</p>
-    <a style="btn-text-right;" class="btn btn-primary" href="logout.php" role="button">Logout</a>
-    
+    <!--<a style="text-align:right;" class="btn btn-primary" href="logout.php" role="button">Logout</a>-->
+    <div class="btn-text-right">
+    <a class="btn btn-primary" href="logout.php" role="button">Logout</a>
+    </div>
 
 
     
