@@ -124,6 +124,8 @@ if (isset($_SESSION["user_id"])) {
         
     <h4>Hello <?= ($user["userName"]) ?></h4>
     <p>Below are your contacts.</p>
+
+    
 	
 	 <div class="topnav">
         <div class="search-container">
