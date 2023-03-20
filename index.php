@@ -182,8 +182,6 @@ if (isset($_SESSION["user_id"])) {
  <!-- TO DO: populate edit modal with current table data so that not all fields have to be entered -->
 
 
- <!--value= <?php //echo $table.bootstrapTable('getData')["firstName"] ?> -->
-
  <div id="contact-modal"class="modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -316,7 +314,7 @@ if (isset($_SESSION["user_id"])) {
 	
          
             $('#contact-modal').modal('show');
-	    $('#contact-modal form input[id=firstName]').val(_firstName);
+	    $('#contact-modal contactForm input[id=firstName]').val(_firstName);
 
         },
         'click .remove': function (e, value, row, index) {
