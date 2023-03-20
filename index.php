@@ -111,6 +111,10 @@ if (isset($_SESSION["user_id"])) {
             .topnav input[type=text] {
                 border: 1px solid #ccc;  
             }
+            
+        }
+        .btn-text-right{
+	            text-align: right;
         }
 
     </style>
@@ -124,7 +128,12 @@ if (isset($_SESSION["user_id"])) {
         
     <h4>Hello <?= ($user["userName"]) ?></h4>
     <p>Below are your contacts.</p>
-    <a style="text-align:right;" class="btn btn-primary" href="logout.php" role="button">Logout</a>
+    <!--<a style="text-align:right;" class="btn btn-primary" href="logout.php" role="button">Logout</a>-->
+    <div class="btn-text-right">
+    <a class="btn btn-primary" href="logout.php" role="button">Logout</a>
+    </div>
+
+
     
 	
 	 <div class="topnav">
