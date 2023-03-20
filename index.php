@@ -231,6 +231,9 @@ if (isset($_SESSION["user_id"])) {
 
     var currentSelection = 0; //tmp var to store clicked row index
     var _firstName = ""; //tmp var to populate edit modal
+    var _lastName = "";
+    var _email = "";
+    var _phoneNo = "";
 
         //function to grab id of contact stored in clicked row
     $('#table').on('click-row.bs.table', function (e, row, $element) {
@@ -239,7 +242,13 @@ if (isset($_SESSION["user_id"])) {
         var al = test[index]['id'];
         currentSelection = al;
 	 _firstName = test[index]['first'].toString();
+	 _lastName = test[index]['last'].toString();
+	 _email = test[index]['email'].toString();
+	 _phoneNo  = test[index]['phone'].toString();
          $('#contact-modal form input[id=firstName]').val(_firstName);
+	 $('#contact-modal form input[id=lastName]').val(_firstName);
+	 $('#contact-modal form input[id=email]').val(_firstName);
+	 $('#contact-modal form input[id=phoneNumber]').val(_firstName);
     });
 
 //here we have to ajax the edit and delete commands to php (because they're nested inside of modals)
