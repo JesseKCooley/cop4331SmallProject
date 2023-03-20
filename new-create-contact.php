@@ -19,8 +19,9 @@
             $lasname = test_input($_POST["lastName"]);
         }
 
-        if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+        if ( !($_POST["email"]) && (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))){
             $emailErr = "Valid email is required";
+            $formValid = false;
         }
 
     }
@@ -67,7 +68,7 @@
         </div>
         <div>
             <label for="email">Email</label>
-            <span class="error">* <?php echo $emailErr;?></span><br>
+            <span class="error"> <?php echo $emailErr;?></span><br>
             <input type="text" id="email" name="email" value = "<?= htmlspecialchars($_POST["email"] ?? "") ?>"><br>
         </div>
         <div>
