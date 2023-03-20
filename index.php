@@ -312,9 +312,9 @@ if (isset($_SESSION["user_id"])) {
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
 	
-         
+            $('#contact-modal form input[id=firstName]').val(_firstName);
             $('#contact-modal').modal('show');
-	    $('#contact-modal form input[id=firstName]').val(_firstName);
+
 
         },
         'click .remove': function (e, value, row, index) {
