@@ -190,16 +190,7 @@ if (isset($_SESSION["user_id"])) {
             <div class="modal-body">
             <form id="contactForm" name="contact" role="form">
 
-            <?php 
 
-            $sql = "SELECT * FROM contacts
-            WHERE id = {$_POST["id"]}";
-
-            $result = $mysqli->query($sql);
-
-            $contact = $result->fetch_assoc();
-
-            ?>
 
                 <div class="form-group">
                     <label for="firstName">First Name</label>
