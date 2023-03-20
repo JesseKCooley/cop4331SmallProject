@@ -239,7 +239,7 @@ if (isset($_SESSION["user_id"])) {
         var al = test[index]['id'];
         currentSelection = al;
 	 _firstName = test[index]['firstName'].text;
-        
+        alert(_firstName);
     });
 
 //here we have to ajax the edit and delete commands to php (because they're nested inside of modals)
