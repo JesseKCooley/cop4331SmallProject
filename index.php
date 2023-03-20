@@ -232,7 +232,7 @@ if (isset($_SESSION["user_id"])) {
 <script type="text/javascript">
 
     var currentSelection = 0; //tmp var to store clicked row index
-    var firstName = ""; //tmp var to populate edit modal
+    var _firstName = ""; //tmp var to populate edit modal
 
         //function to grab id of contact stored in clicked row
     $('#table').on('click-row.bs.table', function (e, row, $element) {
@@ -240,7 +240,7 @@ if (isset($_SESSION["user_id"])) {
         var test =$table.bootstrapTable('getData');
         var al = test[index]['id'];
         currentSelection = al;
-	  firstName = test[index]['firstName'];
+	 _firstName = test[index]['firstName'];
         
     });
 
@@ -314,8 +314,9 @@ if (isset($_SESSION["user_id"])) {
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
 	
-             $('#contact-modal form input[name=firstName]').val(firstName);
+         
             $('#contact-modal').modal('show');
+	    $('#contact-modal form input[id=firstName]').val(_firstName);
 
         },
         'click .remove': function (e, value, row, index) {
