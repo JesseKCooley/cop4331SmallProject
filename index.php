@@ -232,6 +232,7 @@ if (isset($_SESSION["user_id"])) {
 <script type="text/javascript">
 
     var currentSelection = 0; //tmp var to store clicked row index
+    var firstName = ""; //tmp var to populate edit modal
 
         //function to grab id of contact stored in clicked row
     $('#table').on('click-row.bs.table', function (e, row, $element) {
@@ -239,7 +240,8 @@ if (isset($_SESSION["user_id"])) {
         var test =$table.bootstrapTable('getData');
         var al = test[index]['id'];
         currentSelection = al;
- 
+	    firstName = test[index]['firstName'];
+        
     });
 
 //here we have to ajax the edit and delete commands to php (because they're nested inside of modals)
@@ -311,9 +313,10 @@ if (isset($_SESSION["user_id"])) {
      //Popups open when edit or delete are clicked 
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
-
+	
+            
             $('#contact-modal').modal('show');
-          
+            $(".modal-body #firstName").val(firstName);
         },
         'click .remove': function (e, value, row, index) {
  
