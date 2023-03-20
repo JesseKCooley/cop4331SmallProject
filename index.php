@@ -185,8 +185,6 @@ if (isset($_SESSION["user_id"])) {
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Edit Contact </h4>
             </div>
-            <div class="modal-body">
-            <form id="contactForm" name="contact" role="form">
 
             <?php 
 
@@ -198,6 +196,11 @@ if (isset($_SESSION["user_id"])) {
             $contact = $result->fetch_assoc();
 
             ?>
+            
+            <div class="modal-body">
+            <form id="contactForm" name="contact" role="form">
+
+
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName" value="<?php echo $contact["firstName"];?>">             
