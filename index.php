@@ -239,7 +239,7 @@ if (isset($_SESSION["user_id"])) {
         var al = test[index]['id'];
         currentSelection = al;
 	 _firstName = test[index]['first'].toString();
-      
+         $('#contact-modal form input[id=firstName]').val(_firstName);
     });
 
 //here we have to ajax the edit and delete commands to php (because they're nested inside of modals)
@@ -312,7 +312,7 @@ if (isset($_SESSION["user_id"])) {
     window.operateEvents = {
         'click .edit': function (e, value, row, index) {
 	
-            $('#contact-modal form input[id=firstName]').val(_firstName);
+         
             $('#contact-modal').modal('show');
 
 
