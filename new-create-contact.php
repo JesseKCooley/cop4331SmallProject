@@ -18,13 +18,13 @@
         }else {
             $lasname = test_input($_POST["lastName"]);
         }
-       
-    
-    
-        
-    
     }
-
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
 ?>
 
 
@@ -37,10 +37,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <script src="/js/contactValidation.js" defer></script>
+
+    <style>
+         .error{
+            color: #FF0000;
+        }
+    </style>    
+
 </head>
 <body style = "background-color:#E6E6FA;">
     
     <h1>New Contact</h1>
+    <p class="error">*Required field</p>
     
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method= "post" id = "contact" novalidate>
         <div>
@@ -111,7 +119,7 @@ if($formValid == true)
                     
     if ($stmt->execute()) {
 
-        header("Location: createContact-success.html");
+        header("Location: index.php");
         exit;
         
     } else {
