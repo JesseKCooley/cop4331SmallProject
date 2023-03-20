@@ -187,9 +187,20 @@ if (isset($_SESSION["user_id"])) {
             </div>
             <div class="modal-body">
             <form id="contactForm" name="contact" role="form">
+
+            <?php 
+
+            $sql = "SELECT * FROM contacts
+            WHERE id = {$_POST["id"]}";
+
+            $result = $mysqli->query($sql);
+
+            $contact = $result->fetch_assoc();
+
+            ?>
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" value="">             
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="<?php echo $contact["firstName"];?>">             
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
