@@ -238,7 +238,7 @@ if (isset($_SESSION["user_id"])) {
         var test =$table.bootstrapTable('getData');
         var al = test[index]['id'];
         currentSelection = al;
-	 _firstName =  "test"//test[index]['firstName'].toString();
+	 _firstName = test[index]['first'].toString();
         alert("you clicked "+ _firstName + " : "+currentSelection);
     });
 
