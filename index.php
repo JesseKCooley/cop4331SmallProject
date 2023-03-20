@@ -177,6 +177,7 @@ if (isset($_SESSION["user_id"])) {
 </div>
  <!-- This is the Modal which appears when the edit contact button is pressed -->
  <!-- TO DO: populate edit modal with current table data so that not all fields have to be entered -->
+
  <div id="contact-modal"class="modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -184,11 +185,15 @@ if (isset($_SESSION["user_id"])) {
                 <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Edit Contact </h4>
             </div>
+
+
             <div class="modal-body">
             <form id="contactForm" name="contact" role="form">
+
+
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" value="firstName">             
+                    <input type="text" class="form-control" id="firstName" name="firstName" value=<?php echo $table.bootstrapTable('getData')["firstName"] ?>>             
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
