@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div>
             <label for="userName">Username</label>
             <span class="error">* <?php echo $nameErr;?></span>
-            <input type="text" id="userName" name="userName" value = "<?php echo $username;?>"><br>
+            <input type="text" id="userName" name="userName"><br>
         </div>
         
         <div>
