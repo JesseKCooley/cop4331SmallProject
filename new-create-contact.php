@@ -13,11 +13,21 @@
         }
 
         if (empty($_POST["lastname"])){
-            $lasnameErr = "Last name is required";
-            $formValid = false;
+   //         $lasnameErr = "Last name is required";
+   //         $formValid = false;
         }else {
             $lasname = test_input($_POST["lastName"]);
         }
+
+        if (! empty($_POST["email"])){
+            $email = test_input($_POST["email"])
+        }
+
+        if (! empty($_POST["number"])){
+            $number = test_input($_POST["number"])
+        }
+
+
     }
     function test_input($data) {
         $data = trim($data);
@@ -58,17 +68,14 @@
         </div>
         <div>
             <label for="lastName">Last Name</label>
-            <span class="error">* <?php echo $lasnameErr;?></span>
             <input type="text" id="lastName" name="lastName" value = "<?php echo $lasname;?>"><br>
         </div>
         <div>
             <label for="email">Email</label>
-            <span class="error">* <?php echo $emailErr;?></span>
             <input type="text" id="email" name="email" value = "<?php echo $email;?>"><br>
         </div>
         <div>
             <label for="phoneNumber">Phone Number</label>
-            <span class="error">* <?php echo $phonenumberErr;?></span>
             <input type="text" id="phoneNumber" name="phoneNumber" value = "<?php echo $number;?>"><br>
         </div>
 
