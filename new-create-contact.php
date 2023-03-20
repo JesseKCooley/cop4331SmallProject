@@ -72,11 +72,11 @@
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" value = "<?php echo $email;?>"><br>
+            <input type="text" id="email" name="email" value = "<?= htmlspecialchars($_POST["email"] ?? "") ?>"><br>
         </div>
         <div>
             <label for="phoneNumber">Phone Number</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" value = "<?php echo $number;?>"><br>
+            <input type="text" id="phoneNumber" name="phoneNumber" value = "<?= htmlspecialchars($_POST["phoneNumber"] ?? "") ?>"><br>
         </div>
 
         
