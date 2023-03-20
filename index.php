@@ -124,7 +124,7 @@ if (isset($_SESSION["user_id"])) {
         
     <h4>Hello <?= ($user["userName"]) ?></h4>
     <p>Below are your contacts.</p>
-
+    <a class="btn btn-primary" href="logout.php" role="button">Logout</a>
     
 	
 	 <div class="topnav">
@@ -148,6 +148,7 @@ if (isset($_SESSION["user_id"])) {
                            
 	</div>           
 <!--    <p><a href="logout.php">Log out</a></p> -->
+
         
     <?php else: header("Location: login.php");?>
    <!-- This is the Main body of the page with no user logged in -->      
