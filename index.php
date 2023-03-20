@@ -186,17 +186,7 @@ if (isset($_SESSION["user_id"])) {
                 <h4 class="modal-title">Edit Contact </h4>
             </div>
 
-            <?php 
 
-            $sql = "SELECT * FROM contacts
-            WHERE id = {$_POST["id"]}";
-
-            $result = $mysqli->query($sql);
-
-            $contact = $result->fetch_assoc();
-
-            ?>
-            
             <div class="modal-body">
             <form id="contactForm" name="contact" role="form">
 
