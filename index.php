@@ -123,7 +123,7 @@ if (isset($_SESSION["user_id"])) {
 
 <div class="container my-3">   
  <!-- This is the Main body of the page once logged in -->
-    <h1>Contact Manager</h1>       
+    <h1>Contactr</h1>       
     <?php if (isset($user)): ?>
         
     <h4>Hello <?= ($user["userName"]) ?></h4>
