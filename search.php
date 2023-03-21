@@ -53,40 +53,40 @@ if (isset($_SESSION["user_id"])) {
 <div class="container my-3">
 
 <?php
-$search = $_POST['search'];
+    $search = $_POST['search'];
 
-$_id = $user["ID"];
-$sql2 = "SELECT * FROM contacts WHERE userID='$_id' AND 
-        (firstName LIKE '%$search%' OR 
-        lastName LIKE '%$search%' OR 
-        email LIKE '%$search%' OR
-        phoneNumber LIKE '%$search%')";
-$result2 =  $mysqli->query($sql2);
+    $_id = $user["ID"];
+    $sql2 = "SELECT * FROM contacts WHERE userID='$_id' AND 
+            (firstName LIKE '%$search%' OR 
+            lastName LIKE '%$search%' OR 
+            email LIKE '%$search%' OR
+            phoneNumber LIKE '%$search%')";
+    $result2 =  $mysqli->query($sql2);
 
 
-$arrVal = array();
+    $arrVal = array();
 
-if($result2->num_rows > 0)
-{
-    $i = 1;
-    while($row = $result2->fetch_assoc())
+    if($result2->num_rows > 0)
     {
-        $table = array(
-              //  'num' => $i,
-              //  'id' => $row['id'],
+        $i = 1;
+        while($row = $result2->fetch_assoc())
+        {
+            $table = array(
+                //  'num' => $i,
+                //  'id' => $row['id'],
                 'First Name'=> $row['firstName'],
                 'Last Name'=> $row['lastName'],
                 'Email'=>$row['email'],
                 'Phone Number'=>$row['phoneNumber'],
                 //'dateCreated'=>$row['dateAdded']
-                );
+            );
 
                 array_push($arrVal, $table);
 
                 $i++;
-    }
+        }
 
-    ?>
+?>
 
 <div class="container my-3">
     <h1>Search Results</h1>
