@@ -188,8 +188,6 @@ if (isset($_SESSION["user_id"])) {
 	</div>     
 </div>
  <!-- This is the Modal which appears when the edit contact button is pressed -->
- <!-- TO DO: populate edit modal with current table data so that not all fields have to be entered -->
-
 
  <div id="contact-modal"class="modal" role="dialog">
     <div class="modal-dialog">
