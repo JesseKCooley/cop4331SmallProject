@@ -19,7 +19,8 @@ else
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ((password_verify($_POST["password"], $user["password_hash"])) && $row = $result->fetch_assoc()  )
+    // (password_verify($_POST["password"], $user["password_hash"])) && 
+    if ($row = $result->fetch_assoc()  )
     {
         returnWithInfo( $row['userName'], $row['password'], $row['ID'] );
     }
