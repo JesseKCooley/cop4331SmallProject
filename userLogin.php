@@ -14,14 +14,14 @@ if( $conn->connect_error )
 }
 else
 {
-    $stmt = $conn->prepare("SELECT * FROM Users WHERE email=? AND password =?");
-    $stmt->bind_param("ss", $inData["email"], $inData["password"]);
+    $stmt = $conn->prepare("SELECT * FROM Users WHERE email=?");
+    $stmt->bind_param("ss", $inData["email"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if( $row = $result->fetch_assoc()  )
+    if ((password_verify($_POST["password"], $user["password_hash"])) && $row = $result->fetch_assoc()  )
     {
-        returnWithInfo( $row['username'], $row['password'], $row['ID'] );
+        returnWithInfo( $row['userName'], $row['password'], $row['ID'] );
     }
     else
     {
@@ -45,13 +45,13 @@ function sendResultInfoAsJson( $obj )
 
 function returnWithError( $err )
 {
-    $retValue = '{"id":0,"username":"","email":"","error":"' . $err . '"}';
+    $retValue = '{"id":0,"userName":"","email":"","error":"' . $err . '"}';
     sendResultInfoAsJson( $retValue );
 }
 
 function returnWithInfo( $firstName, $lastName, $id )
 {
-    $retValue = '{"id":' . $id . ',"username":"' . $username . '","email":"' . $email . '","error":""}';
+    $retValue = '{"id":' . $id . ',"userName":"' . $username . '","email":"' . $email . '","error":""}';
     sendResultInfoAsJson( $retValue );
 }
 
