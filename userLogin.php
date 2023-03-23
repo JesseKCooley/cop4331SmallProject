@@ -15,14 +15,14 @@ if( $conn->connect_error )
 else
 {
     $stmt = $conn->prepare("SELECT * FROM Users WHERE email=?");
-    $stmt->bind_param("ss", $inData["email"]);
+    $stmt->bind_param("s", $inData["email"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
     // (password_verify($_POST["password"], $user["password_hash"])) && 
     if ($row = $result->fetch_assoc()  )
     {
-        returnWithInfo( $row['userName'], $row['password'], $row['ID'] );
+        returnWithInfo( $row['userName'], $row['password_hash'], $row['ID'] );
     }
     else
     {
