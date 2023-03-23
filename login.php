@@ -5,8 +5,23 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    $mysqli = require __DIR__ . "/database.php";
+   // $mysqli = require __DIR__ . "/database.php";
     
+   $host = "127.0.0.1";
+   $dbname = "cop4331";
+   $username = "root";
+   $password = "?weLOVElamp826";
+   
+   
+   $mysqli = new mysqli( $host,
+                         $username,
+                         $password,
+                         $dbname);
+                        
+   if ($mysqli->connect_errno) {
+       die("Connection error: " . $mysqli->connect_error);
+   }
+
     $sql = sprintf("SELECT * FROM users
                     WHERE email = '%s'",
                    $mysqli->real_escape_string($_POST["email"]));
