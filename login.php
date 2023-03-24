@@ -37,16 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_start();
             
             session_regenerate_id();
-// insert
-            if ($row = $result->fetch_assoc()  )
-            {
-                returnWithInfo( $row['userName'], $row['password_hash'], $row['ID'] );
-            }
-            else
-            {
-                returnWithError("No Records Found");
-            }
-// end
             
             $_SESSION["user_id"] = $user["ID"];
             
@@ -56,25 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     
     $is_invalid = true;
-
-
-    function sendResultInfoAsJson( $obj )
-    {
-        header('Content-type: application/json');
-        echo $obj;
-    }
-
-    function returnWithError( $err )
-    {
-        $retValue = '{"id":0,"userName":"","email":"","error":"' . $err . '"}';
-        sendResultInfoAsJson( $retValue );
-    }
-
-    function returnWithInfo( $firstName, $lastName, $id )
-    {
-        $retValue = '{"id":' . $id . ',"userName":"' . $username . '","email":"' . $email . '","error":""}';
-        sendResultInfoAsJson( $retValue );
-    }
 }
 
 ?>
