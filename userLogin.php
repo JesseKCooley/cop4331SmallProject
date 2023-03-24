@@ -18,7 +18,7 @@ if( $conn->connect_error )
 }
 else
 {
-    $stmt = $conn->prepare("SELECT * FROM users WHERE userName=?");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE userName='billybob'");
     $stmt->bind_param("s", $inData["login"]);
     $stmt->execute();
     $result = $stmt->get_result();
