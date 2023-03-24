@@ -19,14 +19,14 @@ if( $conn->connect_error )
 else
 {
     $stmt = $conn->prepare("SELECT * FROM users WHERE userName='billybob'");
-    $stmt->bind_param("s", $inData["login"]);
+  //  $stmt->bind_param("s", $inData["login"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
     // (password_verify($_POST["password"], $user["password_hash"])) && 
     if ($row = $result->fetch_assoc()  )
     {
-        returnWithInfo( $row['userName'], $row['password_hash'], $row['ID'] );
+        returnWithInfo( $row['userName'], $row['email'], $row['ID'] );
     }
     else
     {
@@ -54,7 +54,7 @@ function returnWithError( $err )
     sendResultInfoAsJson( $retValue );
 }
 
-function returnWithInfo( $firstName, $lastName, $id )
+function returnWithInfo( $username, $email, $id )
 {
     $retValue = '{"id":' . $id . ',"userName":"' . $username . '","email":"' . $email . '","error":""}';
     sendResultInfoAsJson( $retValue );
